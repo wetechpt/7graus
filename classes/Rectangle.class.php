@@ -1,8 +1,8 @@
 <?php
-    require('Controllers/Shape.class.php');
 
-    class Rectangle extends Shape{
+    class Rectangle extends Shape implements ShapeInterface{
         const TIPO = 2;
     }
+
 
 ?>

@@ -3,33 +3,23 @@
     // Autoloader
     require('autoloader.php');
 
-    //Manually Import
-    // require_once('Controllers/Shape.php');
-    // require('Controllers/Rectangle.php');
-    // require('Controllers/Circle.php');
+    $circle = new Circle(5, 10, 25, 1);
+    $circle->name = 'Circle 1';
 
+    // $shape1 = new ShapeConstructor($circle);
+    var_dump($circle);
+    echo "\n";
+    echo $circle->calculaArea();
+    echo "\n";
+    var_dump($circle->getProperties());
 
-    // $rec = new Rectangle(5, 25);
-    // $rec->name = "REC 1";
-    // var_dump($rec);
+    $rectangle = new Rectangle(70, 88, 2);
+    $rectangle->name = 'Rectangle 1';
 
-    // $circle = new Circle(5, 15, 12);
-    // $circle->name = "Circle 1";
-    // echo 'Propriedades: ';
-    // var_dump($circle->getCircleProperties());
-    // echo ("\n");
-    // echo ('Area do '.$circle->name.': '.$circle->calcAreaCircle());
-    // echo ("\n");
-    // var_dump('Circulo: '.$circle);
-    // echo ("\n");
-
-    $shape = new Shape(5, 10, 4);
-    $shape->name = "Shape 1";
-
-    // var_dump($shape);
-    echo( "Área: ".$shape->calcArea() );
-    // echo ("\n");
-    // $prop = $shape->getShapeProperties();
-    // var_dump($shape->id);
-    // var_dump($prop);
+    // $shape2 = new ShapeConstructor($rectangle);
+    var_dump($rectangle);
+    echo "\n";
+    echo $rectangle->calculaArea();
+    echo "\n";
+    var_dump($rectangle->getProperties());
 ?>

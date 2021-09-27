@@ -1,37 +1,37 @@
 <?php
+    // require('./interfaces/ShapeInterface.php');
+    // require('classes/idGenerator.class.php');
 
-    class Shape{
+    abstract class Shape{
 
         // Properties
-        const TIPO  = 1;
-        public $name;
-        protected $width, $length;
-        private $id;
+        const       TIPO  = 1;
+        public      string $name;
+        protected   int $width, $length;
+        private     string $id;
 
-        function __construct($length, $width, $idType) {
+        function __construct(int $length, int $width, string $id) {
             $this->length   = $length;
             $this->width    = $width;
-            $this->construcId($idType);
+            $this->id       = $id;
         }
 
-        // Accessors
-        public function getId() {
-            return $this->id;
-        }
-
-        public function setId($id) {
-            if (property_exists($this, $id)) {
+        public function getId(): string
+        {
                 return $this->id;
+        }
+
+        public function setId(string $id, IdGenerator $generator): string {
+            if (property_exists($this, $id)) {
+                return $this->id = $generator->generateID($id);
             }
         }
 
-        public function calcArea() {
-            $area = $this->length * $this->width;
-
-            return $area;
+        public function calculaArea(): int {
+            return $this->length * $this->width;
         }
 
-        public function getShapeProperties()
+        public function getProperties(): object
         {
             $p["name"]      = $this->name;
             $p["width"]     = $this->width;
@@ -41,25 +41,6 @@
             return (object) $p;
         }
 
-        public function construcId($idType){
-            switch ($idType){
-                case 1:
-                    $this->id = uniqid();
-                    break;
-                case 2:
-                    $this->id = bin2hex(random_bytes(20));
-                    break;
-                case 3:
-                    $this->id = md5(uniqid(rand(), true));
-                    break;
-                default:
-                    $this->id = uniqid();
-
-                    break;
-            }
-
-            return $idType;
-        }
     }
 
 ?>

@@ -3,14 +3,23 @@
     
     class CalcTest extends TestCase
     {
-        public function testCalcArea(){
-            // require (__DIR__ ."/classes/Shape.class.php");
-            require ("./classes/Shape.class.php");
+        public function testCalcAreaCircle(){
+            require ("./classes/Circle.class.php");
 
-            $shape = new Shape(5, 10, 4);
-            $shape->name = "Shape 1";
+            $circle = new Circle(5, 10, 4, 1);
+            $circle->name = "Circle";
+            
 
-            $this->assertEquals(5, $shape->calcArea());
+            $this->assertEquals(78, $circle->calculaArea());
+        }
+        
+        public function testCalcAreaRectangle(){
+            require ("./classes/Rectangle.class.php");
+            
+            $rectangle = new Rectangle(10, 4, 1);
+            $rectangle->name = "Rectangle";
+
+            $this->assertEquals(40, $rectangle->calculaArea());
         }
     }
 ?>
