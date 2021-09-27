@@ -45,7 +45,7 @@ abstract class ClassLike extends Node\Stmt
     /**
      * @return Property[]
      */
-    public function getProperties() : array {
+    public function getClone() : array {
         $properties = [];
         foreach ($this->stmts as $stmt) {
             if ($stmt instanceof Property) {

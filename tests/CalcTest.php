@@ -1,25 +1,54 @@
 <?php
     use PHPUnit\Framework\TestCase;
+    use App\Classes\UniqId;
+    use App\Classes\Md5;
+    use App\Classes\Circle;
+    use App\Classes\Rectangle;
     
     class CalcTest extends TestCase
     {
-        public function testCalcAreaCircle(){
-            require ("./classes/Circle.class.php");
+        public function setup(): void{
+            $this->circle = new Circle(5, 10, 4, new UniqId());
+            $this->circle->name = "Circle";
 
-            $circle = new Circle(5, 10, 4, 1);
-            $circle->name = "Circle";
-            
-
-            $this->assertEquals(78, $circle->calculaArea());
+            $this->rectangle = new Rectangle(10, 4, (new UniqId()));
+            $this->rectangle->name = "Rectangle";
         }
         
-        public function testCalcAreaRectangle(){
-            require ("./classes/Rectangle.class.php");
-            
-            $rectangle = new Rectangle(10, 4, 1);
-            $rectangle->name = "Rectangle";
+        public function testCalcAreaCircle(){
+            $this->assertEquals(78, $this->circle->calculaArea());
+        }
+        
+        public function testCalcAreaRectangle(){           
+            $this->assertEquals(40, $this->rectangle->calculaArea());
+        }
+        
+        public function testGetCloneCircle(){           
+            $this->assertInstanceOf(Circle::class, $this->circle->getClone());
+        }
+        
+        public function testGetCloneRectangle(){           
+            $this->assertInstanceOf(Rectangle::class, $this->rectangle->getClone());
+        }
 
-            $this->assertEquals(40, $rectangle->calculaArea());
+        public function testCircleGetId(){           
+            $this->assertIsString($this->circle->getId());
+        }
+
+        public function testCircleSetId(){
+            $old_id = $this->circle->getId();
+            $this->circle->setId(new Md5()); 
+            $this->assertNotEquals($this->circle->getId(), $old_id);
+        }
+
+        public function testRectangleGetId(){           
+            $this->assertIsString($this->rectangle->getId());
+        }
+
+        public function testRectangleSetId(){
+            $old_id = $this->rectangle->getId();
+            $this->rectangle->setId(new Md5()); 
+            $this->assertNotEquals($this->rectangle->getId(), $old_id);
         }
     }
 ?>

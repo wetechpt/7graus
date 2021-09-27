@@ -93,7 +93,7 @@ class Restorer
             $class    = new ReflectionClass($className);
             $defaults = $class->getDefaultProperties();
 
-            foreach ($class->getProperties() as $attribute) {
+            foreach ($class->getClone() as $attribute) {
                 if (!$attribute->isStatic()) {
                     continue;
                 }

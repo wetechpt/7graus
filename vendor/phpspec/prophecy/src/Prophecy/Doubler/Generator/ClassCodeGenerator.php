@@ -46,7 +46,7 @@ class ClassCodeGenerator
             )
         );
 
-        foreach ($class->getProperties() as $name => $visibility) {
+        foreach ($class->getClone() as $name => $visibility) {
             $code .= sprintf("%s \$%s;\n", $visibility, $name);
         }
         $code .= "\n";

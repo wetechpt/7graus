@@ -74,7 +74,7 @@ class ClassNode
         return in_array($interface, $this->interfaces);
     }
 
-    public function getProperties()
+    public function getClone()
     {
         return $this->properties;
     }

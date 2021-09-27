@@ -1,1 +1,1 @@
-{"version":1,"defects":{"CalcTest::testCalcArea":3,"CalcTest::testCalcAreaRectangle":3},"times":{"CalcTest::testCalcArea":0.014,"CalcTest::testCalcAreaCircle":0.011,"CalcTest::testCalcAreaRectangle":0}}
+{"version":1,"defects":{"CalcTest::testCalcArea":3,"CalcTest::testCalcAreaRectangle":4,"CalcTest::testCalcAreaCircle":4,"CalcTest::testGetCloneCircle":4},"times":{"CalcTest::testCalcArea":0.014,"CalcTest::testCalcAreaCircle":0.013,"CalcTest::testCalcAreaRectangle":0,"CalcTest::testGetCloneCircle":0.002}}

@@ -304,7 +304,7 @@ class Snapshot
             $class    = new ReflectionClass($className);
             $snapshot = [];
 
-            foreach ($class->getProperties() as $attribute) {
+            foreach ($class->getClone() as $attribute) {
                 if ($attribute->isStatic()) {
                     $name = $attribute->getName();
 

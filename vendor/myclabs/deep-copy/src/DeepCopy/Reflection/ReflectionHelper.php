@@ -13,18 +13,18 @@ class ReflectionHelper
     /**
      * Retrieves all properties (including private ones), from object and all its ancestors.
      *
-     * Standard \ReflectionClass->getProperties() does not return private properties from ancestor classes.
+     * Standard \ReflectionClass->getClone() does not return private properties from ancestor classes.
      *
      * @author muratyaman@gmail.com
-     * @see http://php.net/manual/en/reflectionclass.getproperties.php
+     * @see http://php.net/manual/en/reflectionclass.getClone.php
      *
      * @param ReflectionClass $ref
      *
      * @return ReflectionProperty[]
      */
-    public static function getProperties(ReflectionClass $ref)
+    public static function getClone(ReflectionClass $ref)
     {
-        $props = $ref->getProperties();
+        $props = $ref->getClone();
         $propsArr = array();
 
         foreach ($props as $prop) {
@@ -33,7 +33,7 @@ class ReflectionHelper
         }
 
         if ($parentClass = $ref->getParentClass()) {
-            $parentPropsArr = self::getProperties($parentClass);
+            $parentPropsArr = self::getClone($parentClass);
             foreach ($propsArr as $key => $property) {
                 $parentPropsArr[$key] = $property;
             }

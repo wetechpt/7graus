@@ -204,7 +204,7 @@ class DeepCopy
             return $newObject;
         }
 
-        foreach (ReflectionHelper::getProperties($reflectedObject) as $property) {
+        foreach (ReflectionHelper::getClone($reflectedObject) as $property) {
             $this->copyObjectProperty($newObject, $property);
         }
 
