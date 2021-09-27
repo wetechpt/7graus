@@ -18,13 +18,11 @@
 
         public function getId(): string
         {
-                return $this->id;
+            return $this->id;
         }
 
         public function setId(string $id, IdGenerator $generator): string {
-            if (property_exists($this, $id)) {
-                return $this->id = $generator->generateID($id);
-            }
+            return $this->id = $generator->generateID($id);
         }
 
         public function calculaArea(): int {
