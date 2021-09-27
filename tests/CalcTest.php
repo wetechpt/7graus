@@ -1,7 +1,7 @@
 <?php
     use PHPUnit\Framework\TestCase;
-    use App\Classes\UniqId;
-    use App\Classes\Md5;
+    use App\Factories\UniqId;
+    use App\Factories\Md5;
     use App\Classes\Circle;
     use App\Classes\Rectangle;
     

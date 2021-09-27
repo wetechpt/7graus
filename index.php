@@ -2,8 +2,8 @@
     require_once realpath('vendor/autoload.php');
     use App\Classes\Circle;
     use App\Classes\Rectangle;
-    use App\Classes\Bin2hex;
-    use App\Classes\UniqId;
+    use App\Factories\Bin2hex;
+    use App\Factories\UniqId;
     
     $circle = new Circle(5, 10, 25, new Bin2hex());
     $circle->name = 'Circle 1';
