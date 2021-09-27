@@ -1,5 +1,5 @@
 <?php
-    namespace App\Classes;
+    namespace App\Factories;
     use App\Interfaces\FactoryIdInterface;
     
     class Md5 implements FactoryIdInterface{
