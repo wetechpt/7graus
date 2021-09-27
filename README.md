@@ -9,34 +9,30 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#usage">Utilização</a></li>
-    <li><a href="#contact">Explicações</a></li>
+    <li><a href="#recursos">Utilização</a></li>
+    <li><a href="#requisitos">Requisitos</a></li>
+    <li><a href="#instalacao">Instaçação</a></li>
+    <li><a href="#utilizacaoetestes">Utilização e Testes</a></li>
+    <li><a href="#Explicacoes">Explicações</a></li>
   </ol>
 </details>
 
 
 
-### Built With
+### Recursos
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Estes foram os recursos utilizados para desenvolver este projeto:
 * [PHP 8.0.10](https://getbootstrap.com)
 * [PHPUnit 9](https://jquery.com)
 
 
+### Requisitos
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
+Lista dos recursos pré-requeridos para inicializar o projeto.
 * [composer](https://getcomposer.org/download/)
 * [php 7^](https://www.php.net/manual/en/install.windows.php)
 
-### Installation
+### Instalacao
 
 1. Clone o repo
    ```sh
@@ -48,6 +44,15 @@ This is an example of how to list things you need to use the software and how to
    ```
 
    <!-- USAGE EXAMPLES -->
-## Usage
+## Utilizacao e Testes
 
-- 
+1. Uilização: Para Utilizar o projeto, na raíz, encontrará um ficheiro chamado index.php, com o servidor PHP a rodar, abra-o e terá alguns exemplos de utilizações das classes Circle e Rectangle.
+
+2. Testes: Para os testes, terá de utilizar o comando na raíz do projeto:
+```sh
+   ./vendor/bin/phpunit tests/CalcTest.php
+   ```
+Assim conseguirá visualizar o resultado dos testes encontrados no ficheiro "/testes/CalcTest.php". Se quiser acrescentar mais algum teste, basta inserir um novo metodo de testes dentro da classe do mesmo ficheiro.
+
+## Explicacoes
+1. Para 
